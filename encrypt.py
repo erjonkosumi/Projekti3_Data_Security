@@ -60,13 +60,13 @@ def Encrypt():
             print("Matrica celes nuk eshte e kthyeshme (nuk ka element invers) keshtu mesazhi nuk mund te dekriptohet")
 
 
-    #konvertimi i mesazhit(shkronje) te nje mesazh te matrices(numer)
+     #konvertimi i mesazhit(shkronje) te nje mesazh te matrices(numer)
     incre2 = 0
     for kolona in range(len(mesazhi)):
         matrixmsg[kolona][0] = ord(mesazhi[incre2])-65
         incre2 += 1
 
-       #shumezimi i matricave permes numpy
+    #shumezimi i matricave permes numpy
     for x in range(0,len(mesazhi),oMatrix):
         rezultati = matrixkey.dot(matrixmsg[x:x+oMatrix])
         for y in rezultati:
