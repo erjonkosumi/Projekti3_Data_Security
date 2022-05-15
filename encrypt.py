@@ -17,3 +17,25 @@ def Encrypt():
         except:
             temp+=x
     mesazhi=temp
+ while True:
+        #format e mundshme te vargut dmth matrica te rangut 2,3 dhe 4
+        while True:
+            key = input("4(2x2)/9(3x3)/16(4x4) : ").upper()
+            if len(key)==4 or len(key)==9 or len(key)==16:
+                break
+            else:
+                print("Gjatesia e celesit nuk pershtatet")
+
+        
+        oMatrix = int(math.sqrt(len(key)))
+        if oMatrix==2:
+            while len(mesazhi)%2!=0:
+                mesazhi+="Z"
+        elif oMatrix==3:
+            while len(mesazhi)%3!=0:
+                mesazhi+="Z"
+        elif oMatrix==4:
+            while len(mesazhi)%4!=0:
+                mesazhi+="Z"
+
+       
