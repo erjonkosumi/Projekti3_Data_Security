@@ -49,6 +49,21 @@ def Encrypt():
                 matrixkey[kolona][rreshti] = ord(key[incre1])-65
                 incre1 += 1
 
-       
+        #matrixkey duhet te jete e kthyeshme (reversibile) ashtu qe cipher texti mund te dekriptohet
+
+        #matrixkey eshte e kthyeshme ne rast se te gjitha elementet e saj jane te ndryshme nga 0
+        #nese ky kusht nuk mbushet, programi ristartohet
+        
+        if np.linalg.det(matrixkey) != 0:
+            break
+        else:
+            print("Matrica celes nuk eshte e kthyeshme (nuk ka element invers) keshtu mesazhi nuk mund te dekriptohet")
+
+
+    #konvertimi i mesazhit(shkronje) te nje mesazh te matrices(numer)
+    incre2 = 0
+    for kolona in range(len(mesazhi)):
+        matrixmsg[kolona][0] = ord(mesazhi[incre2])-65
+        incre2 += 1
 
        
