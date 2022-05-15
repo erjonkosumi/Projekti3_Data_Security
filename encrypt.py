@@ -37,5 +37,18 @@ def Encrypt():
         elif oMatrix==4:
             while len(mesazhi)%4!=0:
                 mesazhi+="Z"
+#formimi i vargjeve permes librarise numpy
+        matrixmsg = np.zeros((len(mesazhi),1))
+        matrixkey = np.zeros((oMatrix,oMatrix))
+        matrixrez = list()
+
+      #ndryshimi i celesit(shkronje) ne nje celes te matrices(numer)
+        incre1 = 0
+        for kolona in range(oMatrix):
+            for rreshti in range(oMatrix):
+                matrixkey[kolona][rreshti] = ord(key[incre1])-65
+                incre1 += 1
+
+       
 
        
