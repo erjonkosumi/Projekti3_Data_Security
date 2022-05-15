@@ -66,4 +66,16 @@ def Encrypt():
         matrixmsg[kolona][0] = ord(mesazhi[incre2])-65
         incre2 += 1
 
-       
+       #shumezimi i matricave permes numpy
+    for x in range(0,len(mesazhi),oMatrix):
+        rezultati = matrixkey.dot(matrixmsg[x:x+oMatrix])
+        for y in rezultati:
+            matrixrez.append(y%26)
+
+    #return rezultatin numer ne rezultat shkronje
+    print("Cipher Text : ",end="")
+    for i in matrixrez:
+        print(chr(int(i)+65),end="")
+    print("")
+    input("\nEnter...")
+
